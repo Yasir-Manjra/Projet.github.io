@@ -1,0 +1,41 @@
+/* Style spécifique Projets Académiques */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#091d2f; color:#fff; font-family:'Segoe UI', Arial, sans-serif; min-height:100vh; }
+
+/* Liens globaux */
+a { text-decoration:none !important; color:#fff !important; }
+a:hover,a:focus { text-decoration:none; color:#fff; }
+
+header { position:sticky; top:0; z-index:1000; text-align:center; padding:2rem 2rem 1.2rem; background:rgba(9,29,47,0.92); backdrop-filter:blur(4px); box-shadow:0 2px 8px rgba(0,0,0,0.25); }
+header h1 { font-size:2rem; margin-bottom:0.4rem; letter-spacing:1px; color:#e0eafc; }
+header p { font-size:1rem; color:#a8b3bf; }
+
+.site-nav { margin-top:1rem; display:flex; gap:1.1rem; justify-content:center; flex-wrap:wrap; }
+.site-nav a { padding:0.55rem 0.95rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:8px; font-size:0.9rem; font-weight:600; letter-spacing:.5px; transition:.25s; }
+.site-nav a:hover { background:rgba(255,255,255,0.14); transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,0.4); }
+
+.container { max-width:1400px; margin:0 auto; padding:2rem; }
+.projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:2rem; }
+
+/* Cartes projets académiques */
+.project-card, .Portfolio-card, .Pokedex-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.3); display:flex; flex-direction:column; transition:.35s; cursor:pointer; }
+.project-card:hover, .Portfolio-card:hover, .Pokedex-card:hover { transform:translateY(-8px); box-shadow:0 8px 32px rgba(0,0,0,0.4); background:rgba(255,255,255,0.08); }
+
+.Portfolio-title, .Pokedex-title, .project-title { padding:1.4rem; font-size:1.3rem; color:#e0eafc; text-align:center; background:rgba(19,58,92,0.55); border-bottom:2px solid rgba(255,255,255,0.1); font-weight:600; letter-spacing:.5px; }
+
+.Portfolio-image, .Pokedex-image, .project-image { width:100%; height:240px; min-height:160px; background:rgba(9,29,47,0.5); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.Portfolio-image img, .Pokedex-image img, .project-image img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center; transition:.35s; }
+.Portfolio-card:hover img, .Pokedex-card:hover img, .project-card:hover img { transform:scale(1.08); opacity:.92; }
+
+.project-status { padding:1.1rem; text-align:center; font-weight:600; font-size:.95rem; display:flex; flex-direction:column; gap:0.4rem; }
+.project-status span { display:inline-block; padding:0.55rem 1.2rem; border-radius:6px; color:#fff; font-size:.85rem; }
+.project-status.completed span:first-child { background:#133a5c; box-shadow:0 2px 12px rgba(19,58,92,.4); }
+.project-status.in-progress span:first-child { background:#1e4d7a; box-shadow:0 2px 12px rgba(30,77,122,.4); }
+.project-status.planned span:first-child { background:#0d2f47; box-shadow:0 2px 12px rgba(13,47,71,.4); }
+
+footer { text-align:center; padding:24px 0; background:rgba(9,29,47,.95); color:#b0b8c1; font-size:.95rem; margin-top:40px; box-shadow:0 -2px 8px rgba(0,0,0,0.25); }
+
+@media (max-width:780px){ .projects-grid { grid-template-columns:1fr; gap:1.4rem; } header h1 { font-size:1.6rem; } .Portfolio-title, .Pokedex-title, .project-title { font-size:1.15rem; padding:1.1rem; } }
+@media (min-width:781px) and (max-width:1100px){ .projects-grid { grid-template-columns:repeat(2,1fr); } }
