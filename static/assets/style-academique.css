@@ -37,5 +37,20 @@ header p { font-size:1rem; color:#a8b3bf; }
 
 footer { text-align:center; padding:24px 0; background:rgba(9,29,47,.95); color:#b0b8c1; font-size:.95rem; margin-top:40px; box-shadow:0 -2px 8px rgba(0,0,0,0.25); }
 
+/* Styles pour la carte Jeu d'échecs */
+.Chess-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; box-shadow:0 4px 24px rgba(0,0,0,0.3); display:flex; flex-direction:column; transition:.35s; cursor:pointer; }
+.Chess-card:hover { transform:translateY(-8px); box-shadow:0 8px 32px rgba(0,0,0,0.4); background:rgba(255,255,255,0.08); }
+
+.Chess-title { padding:1.4rem; font-size:1.3rem; color:#e0eafc; text-align:center; background:rgba(19,58,92,0.55); border-bottom:2px solid rgba(255,255,255,0.1); font-weight:600; letter-spacing:.5px; }
+
+.Chess-image { width:100%; height:240px; min-height:160px; background:rgba(9,29,47,0.5); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.Chess-image img { max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; object-position:center; transition:.35s; }
+.Chess-card:hover img { transform:scale(1.08); opacity:.92; }
+
 @media (max-width:780px){ .projects-grid { grid-template-columns:1fr; gap:1.4rem; } header h1 { font-size:1.6rem; } .Portfolio-title, .Pokedex-title, .project-title { font-size:1.15rem; padding:1.1rem; } }
 @media (min-width:781px) and (max-width:1100px){ .projects-grid { grid-template-columns:repeat(2,1fr); } }
+
+/* For larger screens, force three columns so 3 projects sit side-by-side */
+@media (min-width:1101px) {
+	.projects-grid { grid-template-columns: repeat(3, 1fr); gap:2rem; }
+}
